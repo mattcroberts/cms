@@ -15,5 +15,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  resolve: {
+    root: [
+      path.resolve('.')
+    ],
+    extensions: ['', '.js', '.jsx']
+  },
+  debug: false
 };

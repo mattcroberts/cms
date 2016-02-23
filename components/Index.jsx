@@ -1,7 +1,11 @@
 import React from 'react';
+import { Router } from 'react-router';
+import { render }  from 'react-dom';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-export default class Index extends React.Component {
-    render() {
-        return <p>Hello World</p>
-    }
-}
+const history = createBrowserHistory();
+
+render(
+  <Router history={history} routes={routes}/>,
+  document.body
+);
