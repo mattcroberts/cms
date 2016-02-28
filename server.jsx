@@ -1,11 +1,11 @@
-import express from 'express';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { RouterContext, match } from 'react-router';
-import routes from './routes';
-import NotFound from './components/404';
-import createLocation from 'history/lib/createLocation';
-import webpack from 'webpack';
+import express  from 'express'
+import createLocation  from 'history/lib/createLocation'
+import React  from 'react'
+import ReactDOMServer  from 'react-dom/server'
+import { RouterContext, match } from 'react-router'
+import webpack  from 'webpack'
+import NotFound  from './components/404'
+import routes  from './routes'
 
 const app = express();
 
