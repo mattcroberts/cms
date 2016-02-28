@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default class Login extends React.Component {
+export default class Home extends React.Component {
   render() {
-    return <p>Hello, world</p>
+    return <div>Welcome Home</div>
   }
 }

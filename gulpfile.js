@@ -10,14 +10,13 @@ var BROWSER_SYNC_RELOAD_DELAY = 500;
 gulp.task('nodemon', function (cb) {
   var called = false;
   return nodemon({
-
-    ext: 'jsx',
-    watch: ['components'],
+    ext: 'js,jsx',
+    ignore: ['public/*'],
+    watch: ['**/*.js', '**/*.jsx'],
     script: 'bootstrap.js'
   })
     .on('start', function onStart() {
-      // ensure start only got called once
-      console.log('start');
+
       if (!called) {
         cb();
       }
@@ -56,5 +55,5 @@ gulp.task('bs-reload', ['wait-for-port'], function () {
 });
 
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('components/**/*.jsx',   ['js', 'bs-reload']);
+  gulp.watch('**/*.jsx',   ['js', 'bs-reload']);
 });

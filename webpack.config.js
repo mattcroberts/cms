@@ -2,7 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './components/Index.jsx',
+  devtool: 'source-map',
+  entry: './Router.jsx',
   output: { path: __dirname + '/public/', filename: 'bundle.js' },
   module: {
     loaders: [
@@ -15,12 +16,5 @@ module.exports = {
         }
       }
     ]
-  },
-  resolve: {
-    root: [
-      path.resolve('.')
-    ],
-    extensions: ['', '.js', '.jsx']
-  },
-  debug: false
+  }
 };
