@@ -1,9 +1,16 @@
-import React  from 'react'
-import ReactDOM  from 'react-dom'
-import { Router, match } from 'react-router'
+import { createStore, combineReducers } from 'redux';
+import { Provider }                     from 'react-redux';
+import reducers                    from './reducers';
 import { browserHistory as history } from 'react-router'
-import routes  from './routes'
+import routes  from './routes';
 
-match({ history, routes }, (error, redirectLocation, renderProps) => {
-  ReactDOM.render(<Router history={history} {...renderProps} />, document.getElementById('root'));
-});
+const reducer = combineReducers(reducers);
+const store   = createStore(reducer, initialState);
+let initialState = window.__INITIAL_STATE__;
+
+render(
+  <Provider store={store}>
+      <Router children={routes} history={history} />
+  </Provider>,
+  document.getElementById('root')
+);
