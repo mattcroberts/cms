@@ -1,8 +1,11 @@
-import { createStore, combineReducers } from 'redux';
-import { Provider }                     from 'react-redux';
-import reducers                    from './reducers';
+import React  from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
 import { browserHistory as history } from 'react-router'
-import routes  from './routes';
+import { createStore, combineReducers } from 'redux'
+import reducers  from './reducers'
+import routes  from './routes'
 
 const reducer = combineReducers(reducers);
 const store   = createStore(reducer, initialState);
