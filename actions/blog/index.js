@@ -1,6 +1,6 @@
 export function create(text, date = new Date()) {
   return {
-    type: 'CREATE_BLOG',
+    type: 'CREATE_BLOG', 
     text,
     date
   }
@@ -13,7 +13,7 @@ export function publish(id) {
   }
 }
 
-export function delete(id) {
+export function deleteBlog(id) {
   return {
     type: 'DELETE_BLOG',
     id

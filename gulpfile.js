@@ -39,15 +39,15 @@ gulp.task('browser-sync', ['wait-for-port', 'nodemon'], function () {
 });
 
 gulp.task('js',  function () {
-  return gulp.src('components/**/*.jsx')
+  return gulp.src(['**/*.jsx', '**/*.js'])
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('public/'))
 });
 
-gulp.task('bs-reload', ['wait-for-port'], function () {
+gulp.task('bs-reload', ['wait-for-port', 'js'], function () {
   browserSync.reload();
 });
 
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('**/*.jsx',   ['js', 'bs-reload']);
+  gulp.watch(['**/*.jsx', '**/*.js', '!public/*'],   ['bs-reload']);
 });

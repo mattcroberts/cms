@@ -1,14 +1,14 @@
-import express  from 'express';
-import createLocation  from 'history/lib/createLocation';
-import { createStore, combineReducers } from 'redux';
-import { Provider, connect } from "react-redux";
-import React  from 'react';
-import ReactDOMServer  from 'react-dom/server';
-import { RouterContext, match } from 'react-router';
+import express  from 'express'
+import createLocation  from 'history/lib/createLocation'
+import React  from 'react'
+import ReactDOMServer  from 'react-dom/server'
+import { Provider, connect } from 'react-redux'
+import { RouterContext, match } from 'react-router'
+import { createStore, combineReducers } from 'redux'
+import { inspect } from 'util'
 import NotFound  from './components/404'
-import reducers from './reducers';
-import routes  from './routes';
-import { inspect } from 'util';
+import reducers  from './reducers'
+import routes  from './routes'
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(function (req, res) {
   const reducer  = combineReducers(reducers);
   const store    = createStore(reducer);
   const initialState = store.getState();
-  
+
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
     if(err) {
@@ -33,9 +33,9 @@ app.use(function (req, res) {
           <RouterContext {...renderProps} />
         </Provider>
       )
-      const componentAsString = ReactDOMServer.renderToString(<RouterContext { ...renderProps } />);
+      const componentAsString = ReactDOMServer.renderToString(InitialComponent);
 
-      res.locals.inspect = inspect;
+      console.log("STATE:", initialState);
 
       res.render("main", {
           component: componentAsString,

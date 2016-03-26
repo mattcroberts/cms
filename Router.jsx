@@ -7,9 +7,9 @@ import { createStore, combineReducers } from 'redux'
 import reducers  from './reducers'
 import routes  from './routes'
 
+let initialState = window.__INITIAL_STATE__;
 const reducer = combineReducers(reducers);
 const store   = createStore(reducer, initialState);
-let initialState = window.__INITIAL_STATE__;
 
 render(
   <Provider store={store}>
