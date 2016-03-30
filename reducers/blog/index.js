@@ -1,10 +1,10 @@
-import Immutable  from 'immutable'
+import Immutable from 'immutable'
 
 const defaultState = new Immutable.List();
 
 export default function(state = defaultState, action) {
 
-  switch(action.type) {
+  switch (action.type) {
     case 'CREATE_BLOG':
       return state.concat(action);
     case 'PUBLISH_BLOG':

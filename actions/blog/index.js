@@ -1,6 +1,6 @@
 export function create(text, date = new Date()) {
   return {
-    type: 'CREATE_BLOG', 
+    type: 'CREATE_BLOG',
     text,
     date
   }
