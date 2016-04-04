@@ -22,7 +22,15 @@
   },
   "lists": [
     {
-      "name": "cms",
+      "name": "Todo",
+      "hidden": false
+    },
+    {
+      "name": "In-Progress",
+      "hidden": false
+    },
+    {
+      "name": "Done",
       "hidden": false
     }
   ],
