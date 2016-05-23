@@ -8,6 +8,9 @@ module.exports = {
   resolve: {
     extensions : ["", ".webpack.js", ".web.js", ".js", ".jsx"]
   },
+  plugins: [
+    //new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {

@@ -1,5 +1,7 @@
-import blog from './blog';
+import blog from "./blog";
+import schema from "./schema";
 
 export default {
-  blogs: blog
+    blogs: blog,
+    schemas: schema
 };

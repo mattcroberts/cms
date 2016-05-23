@@ -28,7 +28,7 @@ gulp.task('wait-for-port', function(cb) {
   waitForPort('localhost', 3000, cb);
 });
 
-gulp.task('browser-sync', ['wait-for-port', 'nodemon'], function() {
+gulp.task('browser-sync', ['nodemon'], function() {
   browserSync({
     proxy: 'http://localhost:3000',
     port: 4000,
@@ -44,7 +44,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest('public/'))
 });
 
-gulp.task('bs-reload', ['wait-for-port', 'js'], function() {
+gulp.task('bs-reload', ['js'], function() {
   browserSync.reload();
 });
 
