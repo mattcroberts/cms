@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {PropTypes} from "react";
 
 export default class Login extends React.Component {
-  render() {
-    return <form>
-      <input placeholder="Username"/>
-      <input placeholder="Password"/>
-      <button type="submit">Login</button>
-    </form>
-  }
+
+    onSubmit(e) {
+        e.preventDefault();
+        this.props.history.push("/");
+    }
+
+    render() {
+        return <form onSubmit={this.onSubmit.bind(this)}>
+          <input placeholder="Username"/>
+          <input placeholder="Password"/>
+          <button type="submit">Login</button>
+        </form>;
+    }
 }
+
+Login.propTypes = {
+    history: PropTypes.object
+};

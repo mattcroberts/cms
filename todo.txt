@@ -1,5 +1,5 @@
-#cms:10 Routing
-#cms:20 REST
-#cms:30 ORM
-#cms:0 redux
-#cms: login/authentication
+#Done:0 Routing
+#Todo:10 REST
+#Todo:20 ORM
+#In-Progress:0 redux
+#Todo:0 login/authentication

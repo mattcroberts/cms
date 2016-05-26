@@ -5,6 +5,12 @@ module.exports = {
   devtool: 'source-map',
   entry: './Router.jsx',
   output: { path: __dirname + '/public/', filename: 'bundle.js' },
+  resolve: {
+    extensions : ["", ".webpack.js", ".web.js", ".js", ".jsx"]
+  },
+  plugins: [
+    //new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {
@@ -12,7 +18,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-0']
         }
       }
     ]
