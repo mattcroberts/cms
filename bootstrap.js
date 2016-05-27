@@ -1,7 +1,7 @@
-require('rootpath')();
+require("rootpath")();
 
 require("babel-core/register", {
-  sourceMaps: true
+    sourceMaps: true
 });
 
-require('server');
+require("app/server");

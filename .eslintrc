@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
@@ -16,6 +17,7 @@
         "react"
     ],
     "rules": {
+        "no-console": 0,
         "indent": [
             "error",
             4
